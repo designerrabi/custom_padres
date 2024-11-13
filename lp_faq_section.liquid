@@ -1,0 +1,271 @@
+{% style %}
+
+      .global-section-title h2{
+            color:  #17171B;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+
+        /* Faq Section CSS */
+        .faq_wrapper_area {
+            padding: 110px 0px 75px 0px;
+            background: linear-gradient(180deg, #F5F8FE 0%, rgba(255, 255, 255, 0.00) 100%);
+        }
+        .faq_descriptions p {
+            color: #515155;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 32px;
+            margin-bottom: 35px;
+            margin-top: 20px;
+        }
+        .primary_btn {
+            border-radius: 50px;
+            background: linear-gradient(90deg, #5FD56A 0%, #3AA143 100%);
+            padding: 19px 26px;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            transition: .3s;
+        }
+        .primary_btn:hover{
+            color: #fff;
+            background: linear-gradient(90deg, #3AA143  0%, #5FD56A 100%);
+        }
+        .primary_btn svg {
+            margin-left: 3px;
+        }
+        .accordion_wrapper .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #DDE6F8;
+            background: #FFF;
+        }
+        .accordion_wrapper .accordion-item .accordion-header .accordion-button{
+            color:#180F24;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+            letter-spacing: -0.1px;
+            border: none;
+            border-radius: 6px;
+            padding: 14px 20px;
+            font-family: "Inter", sans-serif !important;
+        }
+        .accordion_wrapper .accordion-item .accordion-header .accordion-button:focus{
+          box-shadow: none;
+        }
+        .accordion_wrapper .accordion-item  .accordion-button:not(.collapsed) {
+            border-radius: 6px 6px 0px 0px;
+            color: #FFF;
+            background: #252E96;
+            box-shadow: none;
+        }
+        .accordion_wrapper .accordion-body p {
+            color: #515155;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 32px;
+            letter-spacing: -0.09px;
+            margin-bottom: 0px;
+        }
+        .accordion_wrapper .accordion-body {
+            padding: 16px 30px;
+        }
+        .accordion_wrapper .accordion-button::after {
+            background-image: url('https://cdn.shopify.com/s/files/1/0513/5712/2724/files/plus.svg?v=1729016456');
+        }
+          .accordion_wrapper .accordion-button:not(.collapsed)::after {
+        	background-image: url('https://cdn.shopify.com/s/files/1/0513/5712/2724/files/minus.svg?v=1729016456');
+        }
+
+        .accordion_wrapper .accordion-item.accordion-active {
+            box-shadow: 10px 20px 80px 0px rgba(0, 0, 0, 0.06);
+        }
+        .accordion_wrapper .accordion-body p a {
+        	color: #252E96;
+        }
+
+
+
+
+
+        /* Section Breakpoints */
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .faq_wrapper_area {
+                padding: 80px 0px 75px 0px;
+            }
+            .global-section-title h2 {
+                font-size: 40px;
+            }
+
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .faq_wrapper_area {
+                padding: 80px 0px 60px 0px;
+            }
+            .global-section-title h2 {
+                font-size: 40px;
+            }
+            .faq_descriptions p {
+                font-size: 18px;
+                margin-bottom: 30px;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .faq_wrapper_area {
+                padding: 60px 0px 60px 0px;
+            }
+            .global-section-title h2 {
+                font-size: 30px;
+            }
+            .faq_descriptions p {
+                font-size: 16px;
+                line-height: 28px;
+                margin-bottom: 20px;
+                margin-top: 15px;
+            }
+            .accordion_wrapper {
+                margin-top: 35px;
+            }
+            .primary_btn {
+                padding: 16px 25px;
+                font-size: 18px;
+            }
+            .accordion_wrapper .accordion-item .accordion-header .accordion-button {
+                font-size: 18px;
+                line-height: 28px;
+                border-radius: 6px;
+                padding: 15px 20px;
+            }
+            .accordion_wrapper .accordion-body p {
+                font-size: 16px;
+                line-height: 28px;
+                margin-bottom: 0px;
+            }
+
+        }
+
+{% endstyle %}
+
+
+
+
+       <div class="faq_wrapper_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="global-section-title">
+                            <h2>{{ section.settings.faq_title }}</h2>
+                        </div>
+                        <div class="faq_descriptions">
+                            <p>{{ section.settings.faq_descriptions }}</p>
+                        </div>
+                        <div class="primary_btn_wrp">
+                            <a class="primary_btn" href="{{ section.settings.faq_btn_url }}">{{ section.settings.faq_btn_text }} <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                       <div class="accordion_wrapper">
+                              <div class="accordion" id="accordionExample">
+                                    {% for block in section.blocks %}
+                                      <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                          <button class="accordion-button {% if forloop.first == false %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ block.id }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="collapse{{ block.id }}">
+                                            {{ block.settings.accordion_title }}
+                                          </button>
+                                        </h2>
+                                        <div id="collapse{{ block.id }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#accordionExample">
+                                          <div class="accordion-body">
+                                             <p>{{ block.settings.accordion_content }}</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    {% endfor %}
+                              </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+           // accordion-item Js Active Class 
+            $('.accordion_wrapper .accordion-item:first').addClass('accordion-active');
+            // Handle click events on accordion items
+            $('.accordion_wrapper .accordion-item').on('click', function() {
+                // Remove active class from all items
+                $('.accordion_wrapper .accordion-item').removeClass('accordion-active');
+                
+                // Add active class to the clicked item
+                $(this).addClass('accordion-active');
+            });
+       });
+
+    </script>
+
+
+
+
+{% schema %}
+  {
+    "name": "FAQ Section",
+    "settings": [
+       {
+          "type": "text",
+          "id": "faq_title",
+          "label": "FAQ Title"
+        },
+        {
+          "type": "text",
+          "id": "faq_descriptions",
+          "label": "FAQ Descriptions"
+        },
+        {
+          "type": "text",
+          "id": "faq_btn_text",
+          "label": "FAQ Button"
+        },
+        {
+          "type": "url",
+          "id": "faq_btn_url",
+          "label": "FAQ URL"
+        }
+    ],
+    "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "accordion_title",
+          "label": "Accordion Title"
+        },
+        {
+          "type": "text",
+          "id": "accordion_content",
+          "label": "Accordion Content"
+        }
+      ]
+    }
+  ],
+      "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "Custom Sections"
+    }
+  ]
+  }
+{% endschema %}
