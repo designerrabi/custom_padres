@@ -1,0 +1,1520 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+{% style %}
+       .tabs_nav_wrapper {
+           margin-top: 50px;
+           margin-bottom: 50px;
+       }
+       .tabs_nav_wrapper ul {
+           justify-content: center;
+           gap: 15px;
+       }
+       .tabs_nav_wrapper ul li button.nav-link {
+           border-radius: 10px !important;
+           border: 2px solid #5A6376 !important;
+           background: #FFF;
+           padding: 16px 20px;
+           font-size: 22px;
+           font-weight: 500;
+           line-height: 20px;
+           color: #494C54;
+           position: relative;
+           z-index: 1;
+           font-family: "Inter", sans-serif !important;
+       }
+       .tabs_nav_wrapper ul li button.nav-link.active {
+           border-radius: 10px !important;
+           color: #FFF;
+           background: #FFF;
+           position: relative;
+           border: 2px solid transparent !important;
+           background-clip: padding-box;
+       }
+
+       .tabs_nav_wrapper ul li button.nav-link.active::before {
+           content: '';
+           position: absolute;
+           top: -2px;
+           left: -2px;
+           right: -2px;
+           bottom: -2px;
+           background: linear-gradient(90deg, #5FD56A 0%, #02953D 100%);
+           border-radius: 10px;
+           z-index: -1;
+       }
+       .tabs_nav_wrapper ul li button.nav-link.active::after{
+           content: '';
+           position: absolute;
+           bottom: -10px;
+           left: 0px;
+           right: 0px;
+           margin: 0 auto;
+           clip-path: polygon(100% 0, 0 0, 50% 63%);
+           width: 22px;
+           height: 9px;
+           background: #2FB453;
+       }
+       .tabs_content_inner {
+           border-radius: 20px;
+           border: 1px solid #C8D8F8;
+           background: #FFF;
+           padding: 0px 0px 60px 0px;
+       }
+       .tabs_content_header h3 {
+           color: #17171B;
+           font-size: 36px;
+           font-weight: 700;
+           text-transform: uppercase;
+           margin-bottom: 0px;
+           letter-spacing: 0;
+       }
+       .tabs_content_header-list ul {
+       	display: grid;
+       	grid-gap: 8px;
+       	margin: 0px;
+       	grid-template-columns: repeat(4, 1fr) !important;
+       }
+       .tabs_content_header-list ul li {
+           color: #515155;
+           font-size: 18px;
+           font-weight: 500;
+           list-style: disc;
+           font-family: "Inter", sans-serif !important;
+           margin-bottom: 0px;
+       }
+       .tabs_content_header-list ul li:first-child{
+           list-style: none;
+       }
+       .tabs_content_header-list ul li a{
+           color: #252E96;
+           font-size: 18px;
+           font-weight: 500;
+           text-decoration-line: underline;
+       }
+        .tabs_book_event_right p {
+          font-size: 20px;
+      }
+       .tabs_content_header-list ul li a:hover{
+           color: #02953D;
+       }
+       .tabs_content_header {
+           border-radius: 20px 20px 0px 0px;
+           background: #F5F8FE;
+           padding: 40px 40px 40px 40px;
+       }
+       .global-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .global-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .global-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .global-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+       .book_event_right_slider ul.slick-dots {
+           margin: 0;
+       }
+         .tabs_gallery_slider ul.slick-dots {
+           margin: 0;
+       }
+
+
+       /*  */
+       .tabs-global-pagination {
+           position: relative;
+           z-index: 1;
+           margin-top: 25px;
+       }
+       .tabs-global-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .tabs-global-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .tabs-global-pagination .slick-dots{
+           display: flex;
+           justify-content: center;
+       }
+       .primary_btn {
+           border-radius: 50px;
+           background: linear-gradient(90deg, #5FD56A 0%, #3AA143 100%);
+           padding: 19px 26px;
+           display: inline-block;
+           font-size: 20px;
+           font-weight: 600;
+           color: #fff;
+           transition: .3s;
+           text-decoration:none;
+       }
+       .primary_btn:hover{
+           color: #fff;
+           background: linear-gradient(90deg, #3AA143  0%, #5FD56A 100%);
+       }
+       .primary_btn svg {
+           margin-left: 3px;
+       }
+       .event_right_slider_item img {
+           width: 100%;
+         height: 490px;
+         object-fit: cover;
+       }
+       .event_bg {
+           padding: 40px 40px 65px 40px;
+       }
+       .tabs_book_event_left_inner ul{
+         margin: 0px;
+       }
+       .tabs_book_event_left_inner ul li {
+           color: #17171B;
+           font-size: 20px;
+           font-weight: 500;
+           list-style: none;
+           margin-bottom: 5px;
+           font-family: "Inter", sans-serif !important;
+       }
+       .tabs_book_event_left_inner ul li:last-child{
+           margin-bottom: 0px;
+       }
+       .tabs_book_event_left_inner_content p {
+           color: #515155;
+           font-size: 18px;
+           font-weight: 500;
+           line-height: 32px;
+           margin-bottom: 40px;
+       }
+       .tabs_book_event_left_inner_middle h4 {
+           color: #17171B;
+           font-size: 18px;
+           font-weight: 600;
+           text-transform: uppercase;
+           margin-bottom: 10px;
+           letter-spacing: 0;
+       }
+       .tabs_book_event_left_inner_middle span {
+           color: #515155;
+           font-size: 20px;
+           font-weight: 400;
+           line-height: 28px;
+           font-family: "Inter", sans-serif !important;
+       }
+
+       .tabs_book_event_right h3 {
+           color: #17171B;
+            font-family: "Inter", sans-serif !important;
+           font-size: 18px;
+           font-weight: 600;
+           text-transform: uppercase;
+           margin-bottom: 10px;
+           letter-spacing: 0;
+       }
+       .tabs_book_event_right ul{
+         margin: 0px;
+       }
+       .tabs_book_event_right ul li {
+           color: #515155;
+           font-size: 20px;
+           font-weight: 400;
+           line-height: 28px;
+           margin-bottom: 10px;
+           font-family: "Inter", sans-serif !important;
+           list-style: none;
+       }
+       .tabs_book_event_right ul li:last-child{
+           margin-bottom: 0px;
+       }
+       .tabs_book_event_right {
+           margin-bottom: 20px;
+       }
+       .tabs_book_event_left_inner {
+           margin-bottom: 55px;
+       }
+       .tabs_book_event_left_inner_content {
+           border-top: 1px solid #C8D8F8;
+           padding-top: 20px;
+           margin-top: 22px;
+       }
+         .tabs_book_event_left_inner_content a {
+       	color: #252E96;
+       }
+       .event_right_slider_active {
+           margin-bottom: 15px;
+       }
+       .vacation_title h2 {
+           color: #17171B;
+           font-size: 36px;
+           font-weight: 700;
+           text-transform: uppercase;
+           position: relative;
+       }
+       .vacation_title h2::before {
+           position: absolute;
+           content: '';
+           right: 40px;
+           top: 23px;
+           background: #C8D8F8;
+           width: 36%;
+           height: 1px;
+       }
+       .vacation_price_box_list ul li {
+           color: rgba(82, 82, 86, 0.8);
+           font-size: 25px;
+           font-weight: 600;
+           font-family: "Plus Jakarta Sans", sans-serif;
+           margin-bottom: 20px;
+       }
+       .vacation_price_box_list ul li:last-child{
+           margin-bottom: 0px;
+       }
+       .vacation_price_box_header {
+           border-radius: 14px 14px 0px 0px;
+           background: #252E96;
+           padding: 30px 40px 35px 45px;
+       }
+       .vacation_price_box_header h3 {
+           color: #fff;
+           font-size: 36px;
+           font-weight: 700;
+           text-transform: uppercase;
+           letter-spacing: 0;
+       }
+       .vacation_price_box_list {
+           padding: 40px 40px 50px 45px;
+           border: 1.5px solid #C8D8F8;
+           border-radius: 0px 0px 14px 14px;
+       }
+       .vacation_title {
+           padding: 0px 0px 40px 40px;
+       }
+       .row.vacation_bg {
+           padding: 0px 40px 40px 40px;
+       }
+       .tabs_wrapper_area {
+           position: relative;
+           padding: 130px 0px 125px 0px;
+       }
+       .tabs_gallery_nav_prev.slick-arrow {
+           background: none;
+           border: none;
+           position: absolute;
+           bottom: 40%;
+           color: #fff;
+           left: 50px;
+           font-size: 30px;
+       }
+       .tabs_gallery_nav_next.slick-arrow {
+           background: none;
+           border: none;
+           position: absolute;
+           bottom: 35%;
+           color: #fff;
+           right: 50px;
+           font-size: 30px;
+       }
+       .tabs_gallery_slider {
+           position: relative;
+           padding: 0px 10px 0px 40px;
+       }
+       .tabs_gallery_active .slick-slide {
+           margin-right: 30px;
+       }
+       .tabs-global-pagination ul li {
+       	margin: 0;
+       }
+         .book_event_right_slider .slick-dots li {
+       	margin: 0;
+       }
+       .tabs_gallery_slider .slick-dots li {
+       	margin: 0;
+       }
+        /*  One pagination   */
+       .global-one-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .global-one-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .global-one-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .global-one-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+       /*  Two pagination   */
+       .global-two-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .global-two-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .global-two-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .global-two-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+         /*  Three pagination   */
+       .global-three-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .global-three-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .global-three-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .global-three-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+       /*  Four pagination   */
+       .global-four-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .global-four-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .global-four-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .global-four-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+       /*  Five pagination   */
+       .global-five-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .global-five-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .global-five-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .global-five-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+       /*  Six pagination   */
+       .global-six-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .global-six-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .global-six-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .global-six-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+       /*  Seven pagination   */
+       .global-seven-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .global-seven-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .global-seven-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .global-seven-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+
+       /*  Tab One Paginations  */
+       .tabs-global-one-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .tabs-global-one-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .tabs-global-one-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .tabs-global-one-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+       /*  Tab Two Paginations  */
+       .tabs-global-two-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .tabs-global-two-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .tabs-global-two-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .tabs-global-two-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+        /*  Tab Three Paginations  */
+       .tabs-global-three-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .tabs-global-three-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .tabs-global-three-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .tabs-global-three-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+
+        /*  Tab Four Paginations  */
+       .tabs-global-four-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .tabs-global-four-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .tabs-global-four-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .tabs-global-four-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+        /*  Tab Five Paginations  */
+       .tabs-global-five-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .tabs-global-five-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .tabs-global-five-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .tabs-global-five-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+
+       /*  Tab Six Paginations  */
+       .tabs-global-six-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .tabs-global-six-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .tabs-global-six-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .tabs-global-six-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+
+
+       /*  Tab Seven Paginations  */
+       .tabs-global-seven-pagination {
+           position: relative;
+           z-index: 1;
+       }
+       .tabs-global-seven-pagination .slick-dots .slick-dot {
+           width: 10px;
+           height: 12px;
+           border-radius: 50%;
+           background-color: #CDDBF6;
+           margin: 0 5px;
+           display: inline-block;
+           border: none;
+       }
+       .tabs-global-seven-pagination .slick-dots li.slick-active .slick-dot{
+           background-color: #252E96;
+       }
+       .tabs-global-seven-pagination .slick-dots {
+           display: flex;
+           justify-content: center;
+       }
+       .book_event_right_slider .slick-initialized {
+           margin-bottom: 15px;
+       }
+       .tabs_gallery_slider .slick-initialized {
+           margin-bottom: 15px;
+       }
+       .global-one-pagination .slick-dots {
+         margin: 0;
+     }
+       .tabs-global-one-pagination .slick-dots {
+         margin: 0;
+     }
+     .vacation_price_box_list ul {
+   	margin: 0;
+   	min-height: 143px;
+   }
+
+   .tabs_book_event_left_inner_middle ul {
+     margin: 0;
+     padding: 0;
+   }
+   .tabs_book_event_left_inner_middle ul li {
+     color: #515155;
+     font-size: 20px;
+     font-weight: 400;
+     line-height: 28px;
+     margin-bottom: 10px;
+     font-family: "Inter", sans-serif !important;
+     list-style: none;
+   }
+   .tabs_book_event_left_inner_middle ul li a {
+     color: #252E96;
+   }
+
+  .book_event_right_slider .slick-dots, .tabs_gallery_slider .slick-dots {
+    position: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px!important;
+}
+
+  .book_event_right_slider .slick-dots li, .tabs_gallery_slider .slick-dots li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
+
+
+.book_event_right_slider .slick-dots li button, .tabs_gallery_slider .slick-dots li button {
+    background: #CDDBF6;
+    padding: 0;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+
+  .book_event_right_slider .slick-dots li.slick-active button, .tabs_gallery_slider .slick-dots li.slick-active button {
+    background: #252E96;
+  }
+
+ .gallery_thumb_item_seven img {
+    border-radius: 10px;
+    height: 300px;
+    width: 95%;
+    object-fit: cover;
+} 
+
+
+
+       /* Section Breakpoints */
+       @media (max-width: 1290px) {
+           .vacation_title h2::before {
+               display: none;
+           }
+       }
+
+       @media (min-width: 992px) and (max-width: 1200px) {
+           .global-section-title h2 {
+               font-size: 40px;
+           }
+           .tabs_nav_wrapper {
+               margin-top: 35px;
+               margin-bottom: 40px;
+           }
+           .tabs_nav_wrapper ul li button.nav-link {
+               padding: 14px 15px;
+               font-size: 20px;
+           }
+           .tabs_content_header-list ul li {
+               font-size: 18px;
+           }
+           .tabs_content_header h3 {
+               font-size: 32px;
+               margin-bottom: 20px;
+           }
+           .tabs_content_header-list ul li a {
+               font-size: 18px;
+           }
+           .tabs_content_header-list ul {
+               gap: 17px;
+           }
+           .tabs_book_event_left_inner ul li {
+               font-size: 18px;
+           }
+           .tabs_book_event_right ul li {
+               font-size: 18px;
+           }
+           .tabs_book_event_right h3 {
+               font-size: 16px;
+           }
+           .tabs_book_event_left_inner_middle h4 {
+               font-size: 16px;
+           }
+           .tabs_book_event_left_inner_middle span {
+               font-size: 16px;
+               line-height: 26px;
+           }
+           .tabs_book_event_left_inner {
+               margin-bottom: 65px;
+           }
+           .tabs_book_event_left_inner_content p {
+               font-size: 16px;
+               line-height: 28px;
+               margin-bottom: 30px;
+           }
+           .vacation_title h2 {
+               font-size: 34px;
+           }
+           .vacation_price_box_header h3 {
+               font-size: 32px;
+           }
+           .vacation_price_box_header {
+               padding: 25px 35px 25px 35px;
+           }
+           .vacation_price_box_list ul li {
+               font-size: 26px;
+               margin-bottom: 15px;
+           }
+           .vacation_price_box_list {
+               padding: 30px 30px 40px 35px;
+           }
+
+
+       }
+
+       @media (min-width: 768px) and (max-width: 991px) {
+           .global-section-title h2 {
+               font-size: 40px;
+           }
+           .tabs_nav_wrapper {
+               margin-top: 35px;
+               margin-bottom: 35px;
+           }
+           .tabs_nav_wrapper ul li button.nav-link {
+               padding: 14px 15px;
+               font-size: 18px;
+           }
+           .tabs_content_header-list ul {
+               display: grid !important;
+               grid-gap: 10px;
+               grid-template-columns: repeat(2, 1fr) !important;
+           }
+           .tabs_content_header-list ul li {
+               font-size: 16px;
+           }
+           .tabs_content_header-list ul li a {
+               font-size: 16px;
+           }
+           .tabs_content_header h3 {
+               font-size: 30px;
+               margin-bottom: 20px;
+           }
+           .tabs_book_event_right ul li {
+               font-size: 16px;
+           }
+           .tabs_book_event_right h3 {
+               font-size: 16px;
+           }
+           .tabs_book_event_left_inner_middle h4 {
+               font-size: 16px;
+           }
+           .tabs_book_event_left_inner_middle span {
+               font-size: 16px;
+               line-height: 26px;
+           }
+           .tabs_book_event_left_inner {
+               margin-bottom: 30px;
+           }
+           .tabs_book_event_left_inner_content p {
+               font-size: 16px;
+               line-height: 28px;
+               margin-bottom: 30px;
+           }
+           .tabs_book_event_left_inner ul li {
+               font-size: 16px;
+           }
+           .tabs_book_event_right {
+               margin-bottom: 20px;
+               margin-top: 25px;
+           }
+           .primary_btn {
+               padding: 16px 26px;
+               font-size: 18px;
+           }
+           .vacation_title {
+               padding: 0px 0px 25px 40px;
+           }
+           .vacation_title h2 {
+               font-size: 30px;
+           }
+           .vacation_price_box_header h3 {
+               font-size: 28px;
+           }
+           .vacation_price_box_header {
+               padding: 20px 20px 20px 25px;
+           }
+           .vacation_price_box_list ul li {
+               font-size: 22px;
+               margin-bottom: 15px;
+           }
+           .vacation_price_box_list {
+               padding: 25px 20px 30px 25px;
+           }
+
+
+
+
+       }
+
+       @media (max-width: 767px) {
+           .global-section-title h2 {
+               font-size: 30px;
+           }
+           .tabs_nav_wrapper {
+               margin-top: 30px;
+               margin-bottom: 35px;
+           }
+           .tabs_nav_wrapper ul li button.nav-link {
+               padding: 10px 10px;
+               font-size: 16px;
+           }
+           .tabs_nav_wrapper ul {
+               gap: 10px;
+           }
+           .tabs_content_header-list ul {
+               display: grid !important;
+               grid-gap: 10px;
+               grid-template-columns: repeat(1, 1fr) !important;
+               padding-left: 10px;
+           }
+           .tabs_content_header-list ul li {
+               font-size: 16px;
+           }
+           .tabs_content_header-list ul li a {
+               font-size: 16px;
+           }
+           .tabs_content_header h3 {
+               font-size: 24px;
+               margin-bottom: 20px;
+               line-height: 1.3;
+           }
+           .tabs_content_header {
+               padding: 25px 15px 25px 15px;
+           }
+           .tabs_book_event_right ul li {
+               font-size: 16px;
+           }
+           .tabs_book_event_right h3 {
+               font-size: 16px;
+           }
+           .tabs_book_event_left_inner_middle h4 {
+               font-size: 16px;
+           }
+           .tabs_book_event_left_inner_middle span {
+               font-size: 16px;
+               line-height: 26px;
+           }
+           .tabs_book_event_left_inner {
+               margin-bottom: 20px;
+           }
+           .tabs_book_event_left_inner_content p {
+               font-size: 16px;
+               line-height: 28px;
+               margin-bottom: 30px;
+           }
+           .tabs_book_event_left_inner ul li {
+               font-size: 16px;
+           }
+           .tabs_book_event_right {
+               margin-bottom: 15px;
+               margin-top: 20px;
+           }
+           .primary_btn {
+               padding: 16px 26px;
+               font-size: 18px;
+           }
+           .event_bg {
+               padding: 20px 25px 40px 25px;
+           }
+           .book_event_right_slider {
+               margin-top: 25px;
+           }
+           .tabs_book_event_left_inner ul {
+               display: grid;
+               grid-gap: 10px;
+               grid-template-columns: repeat(1, 1fr) !important;
+               padding-left: 0px;
+           }
+           .tabs_book_event_right ul {
+               display: grid;
+               grid-template-columns: repeat(1, 1fr) !important;
+               padding-left: 0px;
+           }
+           .tabs_book_event_left_inner_content {
+               padding-top: 15px;
+               margin-top: 15px;
+           }
+           .vacation_title h2 {
+               font-size: 24px;
+               line-height: 1.3;
+           }
+           .vacation_title {
+               padding: 0px 0px 30px 25px;
+           }
+           .vacation_price_box_header h3 {
+               font-size: 22px;
+           }
+           .vacation_price_box_header {
+               padding: 20px 20px 20px 25px;
+           }
+           .vacation_price_box_list ul li {
+               font-size: 18px;
+               margin-bottom: 10px;
+           }
+           .vacation_price_box_list {
+               padding: 15px 10px 15px 20px;
+           }
+           .vacation_price_box {
+               margin-bottom: 30px;
+           }
+           .row.vacation_bg {
+               padding: 0px 25px 10px 25px;
+           }
+           .tabs_wrapper_area {
+               padding: 65px 0px 60px 0px;
+           }
+           .tabs_content_inner {
+               padding: 0px 0px 40px 0px;
+           }
+           .tabs_gallery_slider {
+               position: relative;
+               padding: 0px 20px 0px 20px;
+           }
+           .tabs_gallery_active .slick-slide {
+               margin-right: 0px;
+           }
+           .gallery_thumb_item_seven img {
+               width: 95%;
+           }
+           .tabs_gallery_nav_prev.slick-arrow {
+               display: none !important;
+           }
+           .tabs_gallery_nav_next.slick-arrow {
+               display: none !important;
+           }
+             .vacation_price_box_list ul {
+           	min-height: 143px;
+               padding-left: 10px;
+           }
+           .tabs_book_event_left_inner_middle ul li {
+           	font-size: 16px;
+           	line-height: 26px;
+           	margin-bottom: 5px;
+           }
+
+       }
+      @media (max-width: 576px) {
+  
+}
+
+      }
+{% endstyle %}
+<div class="tabs_wrapper_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="global-section-title">
+          <h2>{{ section.settings.section_title }}</h2>
+        </div>
+      </div>
+    </div>
+{% assign weeks = "Saturday,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="tabs_nav_wrapper">
+          <ul class="nav nav-pills mb-3" id="pills-tab--{{ section.id }}" role="tablist">
+            {% for week in weeks %}
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link {% if forloop.first %}active{% endif %}"
+                id="pills-{{ week | handle }}-tab-{{ section.id }}"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-{{ week | handle }}-{{ section.id }}"
+                type="button"
+                role="tab"
+                aria-controls="pills-{{ week | handle }}-{{ section.id }}"
+                aria-selected="{% if forloop.first %}true {% else %}false{% endif %}"
+              >
+                {{ week }}
+              </button>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="tabs_content_wrapper">
+          <div class="tab-content" id="pills-tabContent--{{ section.id }}">
+            {% for week in weeks %}
+            <div
+              class="tab-pane fade {% if forloop.first %}show active{% endif %}"
+              id="pills-{{ week | handle }}-{{ section.id }}"
+              role="tabpanel"
+              aria-labelledby="pills-{{ week | handle }}-tab-{{ section.id }}"
+              tabindex="0"
+            >
+              <div class="tabs_content_inner">
+                <div class="tabs_content_header">
+                  <h3>{{ week }}</h3>
+                  <div class="tabs_content_header-list d-none">
+                    <ul>
+                      <li>Frontier Park</li>
+                      <li>Lewis Boat House</li>
+                      <li>Historic Main Street</li>
+                      <li>Lewis and Clark Monument</li>
+                      <li>
+                        <a href="https://www.discoverstcharles.com/things-to-do/attractions/st-charles-trolley/"
+                          >St. Charles Trolley</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                {% for block in section.blocks %}
+                  {% if block.type == 'event_tab' and block.settings.day == week %}
+                    <div class="row event_bg">
+                      <div class="col-lg-6 col-md-6">
+                        <div class="tabs_book_event_left_content">
+                          <div class="row">
+                            <div class="col-lg-5">
+                              <div class="tabs_book_event_left_inner">
+                                {{ block.settings.event_address }}
+                              </div>
+                              <div class="tabs_book_event_left_inner_middle">
+                                <h4>Lodging:</h4>
+                                <span>{{ block.settings.loading }}</span>
+                              </div>
+                            </div>
+                            <div class="col-lg-7">
+                              <div class="tabs_book_event_right">
+                                <h3>Meals:</h3>
+                                <p>{{ block.settings.meals }}</p>
+                              </div>
+                              <div class="tabs_book_event_left_inner_middle">
+                                <h4>Points of Interest:</h4>
+                                {{ block.settings.points_of_interest }}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs_book_event_left_inner_content">
+                            {{ block.settings.event_description }}
+                          </div>
+                          <div class="primary_btn_wrp">
+                            <a
+                              class="primary_btn"
+                              href="{{ block.settings.register_btn_url }}"
+                              >Register Now
+                              <svg
+                                stroke="currentColor"
+                                fill="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 448 512"
+                                height="1em"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                        <div class="book_event_right_slider">
+                          <div class="tabs--{{ week | handle }}">
+                            {% if block.settings.event_slider_image1 != blank %}
+                            <div>
+                              <div class="event_right_slider_item">
+                             <img src="{{ block.settings.event_slider_image1 | image_url }}" alt="event slider image">
+
+                              </div>
+                            </div>
+                            {% endif %}
+                            {% if block.settings.event_slider_image2 != blank %}
+                            <div>
+                              <div class="event_right_slider_item">
+                                <img src="{{ block.settings.event_slider_image2 | image_url }}" alt="event slider image">
+                              </div>
+                            </div>
+                            {% endif %}
+                            {% if block.settings.event_slider_image3 != blank %}
+                            <div>
+                              <div class="event_right_slider_item">
+                                <img src="{{ block.settings.event_slider_image3 | image_url }}" alt="event slider image">
+                              </div>
+                            </div>
+                            {% endif %}
+                            {% if block.settings.event_slider_image4 != blank %}
+                            <div>
+                              <div class="event_right_slider_item">
+                                <img src="{{ block.settings.event_slider_image4 | image_url }}" alt="event slider image">
+                              </div>
+                            </div>
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vacation_title">
+                      <h2>{{ block.settings.vacation_title }}</h2>
+                    </div>
+                    <div class="row vacation_bg">
+                      <div class="col-lg-6 col-md-6">
+                        <div class="vacation_price_box">
+                          <div class="vacation_price_box_header">
+                            <h3>{{ block.settings.vacation_box1_heading }}</h3>
+                          </div>
+                          <div class="vacation_price_box_list">
+                            {{ block.settings.vacation_box1_description }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                        <div class="vacation_price_box">
+                          <div class="vacation_price_box_header">
+                            <h3>{{ block.settings.vacation_box2_heading }}</h3>
+                          </div>
+                          <div class="vacation_price_box_list">
+                            {{ block.settings.vacation_box2_description }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tabs_gallery_slider">
+                      <div class="tabs_gallery--{{ week | handle }}">
+                        {% if block.settings.gallery_slider_image1 != blank %}
+                        <div>
+                          <div class="gallery_thumb_item_seven">
+                            <img src="{{ block.settings.gallery_slider_image1 | image_url }}" alt="gallery slider">
+                          </div>
+                        </div>
+                        {% endif %}
+                        {% if block.settings.gallery_slider_image2 != blank %}
+                        <div>
+                          <div class="gallery_thumb_item_seven">
+                            <img src="{{ block.settings.gallery_slider_image2 | image_url }}" alt="gallery slider">
+                          </div>
+                        </div>
+                        {% endif %}
+                        {% if block.settings.gallery_slider_image3 != blank %}
+                        <div>
+                          <div class="gallery_thumb_item_seven">
+                            <img src="{{ block.settings.gallery_slider_image3 | image_url }}" alt="gallery slider">
+                          </div>
+                        </div>
+                        {% endif %}
+                        {% if block.settings.gallery_slider_image4 != blank %}
+                        <div>
+                          <div class="gallery_thumb_item_seven">
+                            <img src="{{ block.settings.gallery_slider_image4 | image_url }}" alt="gallery slider">
+                          </div>
+                        </div>
+                        {% endif %}
+                      </div>
+                      <button class="tabs_gallery_nav_prev active-arrow-prev--{{ week | handle }}">
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 320 512"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path>
+                        </svg>
+                      </button>
+                      <button class="tabs_gallery_nav_next active-arrow-next--{{ week | handle }}">
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 320 512"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
+                        </svg>
+                      </button>
+                      <!-- <div class="tabs-global-one-pagination"></div> -->
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+   $(document).ready(function(){
+      {% for week in weeks %}
+       $('.tabs--{{ week | handle }}').slick({
+           slidesToShow: 1,
+           slidesToScroll: 1,
+           dots: true,
+           arrows: false,
+           autoplay: true,
+           centerMode: true,
+           centerPadding: '0px',
+           autoplaySpeed: 3000,
+           infinite: true,
+
+           responsive: [
+               {
+                   breakpoint: 1200,
+                   settings: {
+                       slidesToShow: 1
+                   }
+               },
+               {
+                   breakpoint: 991,
+                   settings: {
+                       slidesToShow: 1
+                   }
+               },
+               {
+                   breakpoint: 768,
+                   settings: {
+                       slidesToShow: 1
+                   }
+               },
+               {
+                   breakpoint: 767,
+                   settings: {
+                       slidesToShow: 1,
+                   }
+               }
+           ]
+       });
+      
+
+       // Tabs Gallery Slider JS
+
+       $('.tabs_gallery--{{ week | handle }}').slick({
+           slidesToShow: 3,
+           slidesToScroll: 1,
+           dots: true,
+           arrows: true,
+           autoplay: true,
+           centerMode: false,
+           centerPadding: '10px',
+           autoplaySpeed: 3000,
+           infinite: true,
+           prevArrow: $('.active-arrow-prev--{{ week | handle }}'),
+           nextArrow: $('.active-arrow-next--{{ week | handle }}'),
+           responsive: [
+               {
+                   breakpoint: 1200,
+                   settings: {
+                       slidesToShow: 3
+                   }
+               },
+               {
+                   breakpoint: 991,
+                   settings: {
+                       slidesToShow: 2
+                   }
+               },
+               {
+                   breakpoint: 768,
+                   settings: {
+                       slidesToShow: 1
+                   }
+               },
+               {
+                   breakpoint: 767,
+                   settings: {
+                       slidesToShow: 1,
+                   }
+               }
+           ]
+       });
+
+      {% endfor %}
+
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Seven Days Tab",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "event_tab",
+      "name": "Event Tab Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "day",
+          "label": "Day",
+          "options": [
+            { "value": "Saturday", "label": "Saturday" },
+            { "value": "Sunday", "label": "Sunday" },
+            { "value": "Monday", "label": "Monday" },
+            { "value": "Tuesday", "label": "Tuesday" },
+            { "value": "Wednesday", "label": "Wednesday" },
+            { "value": "Thursday", "label": "Thursday" },
+            { "value": "Friday", "label": "Friday" },
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "event_address",
+          "label": "Event Address"
+        },
+        {
+          "type": "text",
+          "id": "loading",
+          "label": "Loading"
+        },
+        {
+          "type": "text",
+          "id": "meals",
+          "label": "Meals"
+        },
+        {
+          "type": "richtext",
+          "id": "points_of_interest",
+          "label": "Points of Interest"
+        },
+        {
+          "type": "richtext",
+          "id": "event_description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "register_btn_url",
+          "label": "Register Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "event_slider_image1",
+          "label": "Event Slider image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "event_slider_image2",
+          "label": "Event Slider image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "event_slider_image3",
+          "label": "Event Slider image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "event_slider_image4",
+          "label": "Event Slider image 4"
+        },
+        {
+          "type": "header",
+          "content": "Vacation Content"
+        },
+        {
+          "type": "text",
+          "id": "vacation_title",
+          "label": "Vacation Heading"
+        },
+        {
+          "type": "text",
+          "id": "vacation_box1_heading",
+          "label": "Vacation box 1 heading"
+        },
+        {
+          "type": "richtext",
+          "id": "vacation_box1_description",
+          "label": "Vacation box 1 description"
+        },
+        {
+          "type": "text",
+          "id": "vacation_box2_heading",
+          "label": "Vacation box 2 heading"
+        },
+        {
+          "type": "richtext",
+          "id": "vacation_box2_description",
+          "label": "Vacation box 2 description"
+        },
+        {
+          "type": "header",
+          "content": "Gallery Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "gallery_slider_image1",
+          "label": "Gallery Slider image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "gallery_slider_image2",
+          "label": "Gallery Slider image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "gallery_slider_image3",
+          "label": "Gallery Slider image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "gallery_slider_image4",
+          "label": "Gallery Slider image 4"
+        },
+      ]
+    }
+  ],
+  
+  "presets": [
+    {
+      "name": "Seven Days Tab"
+    }
+  ]
+}
+{% endschema %}
