@@ -1,0 +1,212 @@
+
+{% style %}
+  
+    .global-section-title h2{
+        color:  #17171B;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+    .About_wrapper_area {
+            padding: 30px 10px 75px 10px !important;
+        }
+        .primary_btn {
+            border-radius: 50px;
+            background: linear-gradient(90deg, #5FD56A 0%, #3AA143 100%);
+            padding: 19px 26px;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            transition: .3s;
+        }
+        .primary_btn:hover{
+            color: #fff;
+            background: linear-gradient(90deg, #3AA143  0%, #5FD56A 100%);
+        }
+        .primary_btn svg {
+            margin-left: 3px;
+        }
+        .about_right_content p {
+            color: #515155;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 36px;
+            margin: 30px 0px 50px 0px;
+        }
+        .about_thumb {
+            margin-right: 35px;
+        }
+        .about_right_content {
+            margin-left: 15px;
+        }
+
+
+        /* Section Breakpoints */
+        @media (min-width: 1200px) and (max-width: 1320px) {
+            .about_thumb {
+                margin-right: 10px;
+            }
+            .about_right_content {
+                margin-left: 0;
+            }
+            .global-section-title h2 {
+                font-size: 40px;
+            }
+            .about_right_content p {
+                margin: 25px 0px 30px 0px;
+                font-size: 20px;
+                line-height: 32px;
+            }
+
+
+
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .global-section-title h2 {
+                font-size: 36px;
+                line-height: 1.2;
+            }
+            .about_right_content p {
+                font-size: 18px;
+                line-height: 30px;
+                margin: 20px 0px 30px 0px;
+            }
+            .about_right_content {
+                margin-left: 0px;
+            }
+            .about_thumb {
+                margin-right: 0px;
+            }
+
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .global-section-title h2 {
+                font-size: 36px;
+                line-height: 1.2;
+            }
+            .global-section-title h2  br{
+                display: none;
+            }
+            .about_right_content p {
+                font-size: 18px;
+                line-height: 30px;
+                margin: 20px 0px 30px 0px;
+            }
+            .about_right_content {
+                margin-left: 0px;
+            }
+            .about_thumb {
+                margin-right: 0px;
+            }
+          .About_wrapper_area .row.align-items-center {
+          	align-items: start !important;
+          }
+                  
+        }
+
+        @media (max-width: 767px) {
+            .global-section-title h2 {
+                font-size: 30px;
+                line-height: 1.2;
+            }
+            .global-section-title h2  br{
+                display: none;
+            }
+            .about_right_content p {
+                font-size: 16px;
+                line-height: 28px;
+                margin: 20px 0px 30px 0px;
+            }
+            .about_right_content {
+                margin-left: 0px;
+            }
+            .about_thumb {
+                margin-right: 0px;
+                margin-bottom: 40px;
+            }
+            .primary_btn {
+                padding: 16px 25px;
+                font-size: 18px;
+            }
+            .About_wrapper_area {
+                padding: 0px 0px 60px 0px !important;
+            }
+
+        }
+
+  
+
+{% endstyle %}
+
+
+
+       <div class="About_wrapper_area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="about_thumb">
+                            {% if section.settings.about_image %}
+                                  <img src="{{ section.settings.about_image | image_url: width: 1500 }}" alt="Event Icon" class="">
+                              {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="about_right_content">
+                            <div class="global-section-title">
+                                <h2>{{ section.settings.about_title }}</h2>
+                            </div>
+                             {{ section.settings.about_des }}
+                            <div class="primary_btn_wrp text-left">
+                                <a class="primary_btn" href="{{ section.settings.banner_btn_url }}">{{ section.settings.banner_btn_text }} <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "About Us Section",
+    "settings": [
+          {
+          "type": "image_picker",
+          "id": "about_image",
+          "label": "About Us Image"
+        },
+        {
+          "type": "text",
+          "id": "about_title",
+          "label": "About Us Title"
+        },
+        {
+          "type": "richtext",
+          "id": "about_des",
+          "label": "About Descriptions"
+        },    
+        {
+          "type": "text",
+          "id": "banner_btn_text",
+          "label": "Hero Banner Button"
+        },
+        {
+          "type": "url",
+          "id": "banner_btn_url",
+          "label": "Hero Banner URL"
+        }
+    ],
+      "presets": [
+    {
+      "name": "About Us Section",
+      "category": "Custom Sections"
+    }
+  ]
+  }
+{% endschema %}
