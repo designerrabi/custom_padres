@@ -1,0 +1,360 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+{% style %}
+      .global-section-title h2{
+            color:  #17171B;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+      }
+
+   .testimoniyal_wrapper_area {
+            padding: 95px 10px 120px 10px;
+        }
+        .testimoniyal_item {
+            position: relative;
+            border-radius: 14px;
+            border: 1px solid #C8D8F8;
+            background: #FFF;
+            padding: 35px 25px 20px 20px;
+            margin-top: 15px;
+            margin-bottom: 70px;
+        }
+        .testimoniyal_content p {
+            color: #515155;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 26px;
+        }
+        .testimoniyal_thumb img {
+            width: 52px;
+            height: 52px;
+            margin-right: 15px;
+        }
+        .testimoniyal_author_content h3 {
+            color: #180F24;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 28px;
+            letter-spacing: -0.1px;
+            font-family: "Inter", sans-serif !important;
+        }
+        .testimoniyal_author_content span {
+            color: #515155;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 32px;
+            font-family: "Inter", sans-serif !important;
+        }
+        .testimoniyal_content {
+            border-bottom: 1px solid rgba(2, 149, 61, 0.10);
+            margin-bottom: 15px;
+        }
+        .testimoniyal_review li img {
+            margin-bottom: 15px;
+        }
+        .testimoniyal_active .slick-slide {
+            margin-right: 30px;
+        }
+        .testimoniyal_quote .quote_blue {
+            display: none;
+        }
+        .testimoniyal_quote {
+            position: absolute;
+            top: -15px;
+        }
+        .testimoniyal_active {
+            margin-top: 45px;
+            margin-bottom: -20px;
+        }
+        .testimoniyal_active .slick-slide.slick-center .testimoniyal_item {
+            box-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.10);
+        }
+        .testimoniyal_active .slick-slide.slick-center .testimoniyal_item .testimoniyal_quote .quote_blue{
+            display: block;
+        }
+        .testimoniyal_active .slick-slide.slick-center .testimoniyal_item .testimoniyal_quote .quote_white{
+            display: none;
+        }
+        .testimoniyal-pagination {
+            position: relative;
+            z-index: 1;
+        }
+        .testimoniyal-pagination .slick-dots .slick-dot {
+            width: 10px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #CDDBF6;
+            margin: 0 5px;
+            display: inline-block;
+            border: none;
+        }
+        .testimoniyal-pagination .slick-dots li.slick-active .slick-dot{
+            background-color: #252E96;
+        }
+        .testimoniyal-pagination .slick-dots {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        /* Section Breakpoints */
+       @media (max-width: 1300px) {
+         .testimoniyal_item {
+          	min-height: 300px;
+          }
+       }
+        @media (min-width: 1191px) and (max-width: 1299px) {
+            .testimoniyal_content p {
+                font-size: 16px;
+                line-height: 28px;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1190px) {
+          .testimoniyal_wrapper_area {
+            	padding: 95px 10px 75px 10px;
+            }
+            .global-section-title h2 {
+                font-size: 40px;
+            }
+            .testimoniyal_content p {
+                font-size: 16px;
+                line-height: 28px;
+            }
+
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .global-section-title h2 {
+                font-size: 40px;
+            }
+            .testimoniyal_wrapper_area {
+                padding: 80px 10px 80px 10px;
+            }
+            .testimoniyal_active .slick-slide {
+                margin-right: 10;
+            }
+            .testimoniyal_content p {
+                font-size: 16px;
+                line-height: 28px;
+            }
+            .testimoniyal_author_content h3 {
+                font-size: 18px;
+                line-height: 28px;
+            }
+            .testimoniyal_author_content span {
+                font-size: 16px;
+                line-height: 28px;
+            }
+        
+        }
+
+        @media (max-width: 767px) {
+            .testimoniyal_wrapper_area {
+                padding: 70px 10px 70px 10px;
+            }
+            .global-section-title h2 {
+                font-size: 30px;
+            }
+            .testimoniyal_active {
+                margin-top: 30px;
+                margin-bottom: -35px;
+            }
+            .testimoniyal_active .slick-slide {
+                margin-right: 0;
+            }
+            .testimoniyal_content p {
+                font-size: 16px;
+                line-height: 28px;
+            }
+            .testimoniyal_author_content h3 {
+                font-size: 18px;
+                line-height: 28px;
+            }
+            .testimoniyal_author_content span {
+                font-size: 16px;
+                line-height: 28px;
+            }
+            .testimoniyal_active .slick-slide.slick-center .testimoniyal_item {
+               box-shadow: none;
+            }
+
+        }
+
+
+{% endstyle %}
+
+
+<div class="testimoniyal_wrapper_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="global-section-title">
+                            <h2>{{ section.settings.section_title }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimoniyal_active">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'testimoniyal_item' %}
+                    <div>
+                        <div class="testimoniyal_item">
+                            <div class="testimoniyal_quote">
+                                {% if block.settings.test_white_quote %}
+                                    <img src="{{ block.settings.test_white_quote | image_url: width: 1500 }}" alt="Event Icon" class="quote_white">
+                                {% endif %}
+                                {% if block.settings.test_blue_quote %}
+                                    <img src="{{ block.settings.test_blue_quote | image_url: width: 1500 }}" alt="Event Icon" class="quote_blue">
+                                {% endif %}
+                            </div>
+                            <div class="testimoniyal_review"> 
+                                <ul>
+                                    <li>{% if block.settings.test_review %}
+                                            <img src="{{ block.settings.test_review | image_url: width: 1500 }}" alt="Event Icon" class="quote_blue">
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="testimoniyal_content">
+                                <p>{{ block.settings.test_des }}</p>
+                            </div>
+                            <div class="testimoniyal_author d-flex align-items-center">
+                                <div class="testimoniyal_thumb">
+                                    {% if block.settings.test_author_thumb %}
+                                         <img src="{{ block.settings.test_author_thumb | image_url: width: 1500 }}" alt="Event Icon" class="">
+                                    {% endif %}
+                                </div>
+                                <div class="testimoniyal_author_content">
+                                    <h3>{{ block.settings.test_author }}</h3>
+                                    <span>{{ block.settings.test_author_location }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
+                <div class="testimoniyal-pagination"></div>
+            </div>
+       </div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script>
+        $(document).ready(function(){
+            $('.testimoniyal_active').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false,
+                autoplay: true,
+                centerMode: true,
+                centerPadding: '0px', 
+                autoplaySpeed: 3000,
+                infinite: true, 
+                appendDots: $('.testimoniyal-pagination'),
+                customPaging: function(slider, i) {
+                    return '<button class="slick-dot"></button>';
+                },
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            });
+
+       });
+
+    </script>
+    
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Testimoniyal Section",
+    "settings": [
+          {
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title"
+         },
+    ],
+      "blocks": [
+    {
+      "type": "testimoniyal_item",
+      "name": "Testimoniyal Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "test_white_quote",
+          "label": "Testimoniyal White Quote"
+        },
+        {
+          "type": "image_picker",
+          "id": "test_blue_quote",
+          "label": "Testimoniyal Blue Quote"
+        },
+         {
+          "type": "image_picker",
+          "id": "test_review",
+          "label": "Testimoniyal Review"
+        },
+        {
+          "type": "richtext",
+          "id": "test_des",
+          "label": "Hero Event Descriptions"
+        },
+        {
+          "type": "image_picker",
+          "id": "test_author_thumb",
+          "label": "Testimoniyal Author Thumb"
+        },
+         {
+          "type": "text",
+          "id": "test_author",
+          "label": "Testimoniyal Author"
+         },
+        {
+          "type": "text",
+          "id": "test_author_location",
+          "label": "Testimoniyal Author Location"
+         },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimoniyal Section",
+      "category": "Custom Sections"
+    }
+  ]
+  }
+{% endschema %}
