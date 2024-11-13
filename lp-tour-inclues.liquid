@@ -1,0 +1,215 @@
+{% style %}
+
+        .tour_bg {
+            border-radius: 20px;
+            border: 1px solid #C8D8F8;
+            background: #F5F8FE;
+            padding: 40px 30px 35px 25px;
+        }
+        .tour_left_content h3 {
+            color: #252E96;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            font-family: "Inter", sans-serif !important;
+        }
+        .tour_left_content ul {
+            padding-left: 25px;
+            margin: 0;
+        }
+        .tour_left_content ul li {
+            color: #515155;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px;
+            list-style: disc;
+            margin-bottom: 18px;
+            font-family: "Inter", sans-serif !important;
+            
+        }
+        .tour_left_content ul li:last-child{
+            margin-bottom: 0px;
+        }
+        .tour_right_content h3 {
+            color: #252E96;
+            font-size: 23px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 40px;
+            text-transform: capitalize;
+            font-family: "Inter", sans-serif !important;
+        }
+        .tour_right_content img {
+            margin-bottom: 40px;
+        }
+        .tour_left_content {
+            margin-right: 30px;
+        }
+        .tour_right_content {
+            margin-left: 0px;
+        }
+        .tour_right_content h3 span {
+        	color: #17171B;
+        	font-size: 24px;
+        	font-weight: 400;
+        	line-height: 40px;
+        	text-transform: uppercase;
+        }
+          .tour_right_content img {
+        	width: 100%;
+        }
+
+
+        /* Section Breakpoints */
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .tour_right_content {
+                margin-left: 0px;
+            }
+            .tour_left_content {
+                margin-right: 0px;
+            }
+            .tour_left_content ul li {
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 15px;
+            }
+
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .tour_right_content {
+                margin-left: 0px;
+            }
+            .tour_left_content {
+                margin-right: 0px;
+                margin-bottom: 40px;
+            }
+            .tour_left_content ul li {
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 15px;
+            }
+            .tour_left_content h3 {
+                font-size: 32px;
+            }
+            .tour_bg {
+                padding: 30px 25px 25px 25px;
+            }
+
+        }
+
+        @media (max-width: 767px) {
+            .tour_right_content {
+                margin-left: 0px;
+            }
+            .tour_left_content {
+                margin-right: 0px;
+                margin-bottom: 40px;
+            }
+            .tour_left_content ul li {
+                font-size: 16px;
+                line-height: 26px;
+                margin-bottom: 10px;
+            }
+            .tour_left_content h3 {
+                font-size: 28px;
+            }
+            .tour_bg {
+                padding: 30px 10px 25px 5px;
+            }
+            .tour_right_content h3 {
+                font-size: 16px;
+                line-height: 26px;
+            }
+            .tour_right_content img {
+                margin-bottom: 20px;
+            }
+            .tour_left_content ul {
+                padding-left: 15px;
+            }
+            .tour_right_content h3 span {
+            	font-size: 16px;
+            	line-height: 28px;
+            }
+
+        }
+
+
+{% endstyle %}
+
+
+
+<div class="tour_wrapper_area">
+            <div class="container">
+                <div class="row tour_bg align-items-center">
+                    <div class="col-lg-6">
+                        <div class="tour_left_content">
+                            <h3>{{ section.settings.tour_title }}</h3>
+                             {{ section.settings.tour_list }}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="tour_right_content">
+                            {% if section.settings.tour_thumb %}
+                                  <img src="{{ section.settings.tour_thumb | image_url: width: 1500 }}" alt="Event Icon" class="">
+                              {% endif %}
+                            <div class="tour_right_content_wrp">
+                              <h3>{{ section.settings.tour_des }} </h3> <h3> <span>{{ section.settings.tour_des_span }}</span> {{ section.settings.tour_des_h3 }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Tour Includes Section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "tour_title",
+          "label": "Tour Title"
+        },
+          {
+          "type": "image_picker",
+          "id": "tour_thumb",
+          "label": "Tour Thumb"
+        },
+        {
+          "type": "richtext",
+          "id": "tour_list",
+          "label": "Tour Event List"
+        },
+         {
+          "type": "text",
+          "id": "tour_des",
+          "label": "Tour Descriptions"
+        },
+         {
+          "type": "text",
+          "id": "tour_des_span",
+          "label": "Tour Descriptions Two"
+        },
+        {
+          "type": "text",
+          "id": "tour_des_h3",
+          "label": "Tour Descriptions Three"
+        },
+    ],
+    "presets": [
+    {
+      "name": "Tour Includes Section",
+      "category": "Custom Sections"
+    }
+  ]
+
+    
+  }
+{% endschema %}
