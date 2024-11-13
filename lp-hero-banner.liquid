@@ -1,0 +1,326 @@
+<style>
+  
+</style>
+
+{% style %}
+   .hero_wrapper_area {
+            position: relative;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            min-height: 860px;
+        }
+        .hero_content {
+            padding-top: 25px;
+        }
+        .hero_content h1 {
+            color: #fff;
+            font-size: 74px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero_content p {
+            color: #FFF;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 34px;
+            margin-bottom: 40px;
+        }
+        .primary_btn {
+            border-radius: 50px;
+            background: linear-gradient(90deg, #5FD56A 0%, #3AA143 100%);
+            padding: 19px 26px;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            transition: .3s;
+        }
+        .primary_btn:hover{
+            color: #fff;
+            background: linear-gradient(90deg, #3AA143  0%, #5FD56A 100%);
+        }
+        .primary_btn svg {
+            margin-left: 3px;
+        }
+        
+        .hero_event_info_item {
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.20);
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(9.5px);
+            position: absolute;
+            right: 155px;
+            align-items: center;
+            padding-left: 15px;
+            width: 540px;
+            height: 128px;
+        }
+        .hero_event_info_content p {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 600;
+            line-height: 34px;
+            margin-bottom: 0;
+        }
+        .hero_event_info_icon {
+            margin-right: 15px;
+        }
+        .hero_event_info_item:nth-child(1) {
+            bottom: 355px;
+        }
+        .hero_event_info_item:nth-child(2) {
+            bottom: 205px;
+        }
+        .hero_event_info_item:nth-child(3) {
+            bottom: 55px;
+        }
+
+   @media (min-width: 1370px) and (max-width: 1570px) {
+            .hero_event_info_item {
+                right: 50px;
+            }
+            .hero_content h1 {
+                font-size: 68px;
+            }
+           
+        }
+        @media (min-width: 1200px) and (max-width: 1369px) {
+            .hero_event_info_item {
+                right: 10px;
+            }
+            .hero_content h1 {
+                font-size: 68px;
+            }
+            .hero_content {
+                padding-top: 0;
+            }
+            .hero_wrapper_area {
+                min-height: 790px;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .hero_event_info_item {
+                right: 5px;
+                width: 415px;
+            }
+            .hero_content h1 {
+                font-size: 56px;
+            }
+            .hero_content p {
+                font-size: 18px;
+                line-height: 30px;
+                margin-bottom: 30px;
+            }
+            .hero_wrapper_area {
+                min-height: 750px;
+            }
+            .hero_event_info_content p {
+                font-size: 18px;
+                line-height: 30px;
+            }
+
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .hero_content h1 {
+                font-size: 48px;
+            }
+            .hero_event_info_content p {
+                font-size: 18px;
+                line-height: 30px;
+            }
+            .hero_wrapper_area {
+                min-height: auto;
+                padding: 135px 10px 535px 10px;
+            }
+            .primary_btn_wrp {
+                text-align: center;
+            }
+            .hero_event_info_item {
+                right: 0;
+                width: 540px;
+                height: 128px;
+                left: 0;
+                margin: 0 auto;
+            }
+            .hero_event_info_content p {
+                font-size: 18px;
+                line-height: 30px;
+            }
+        
+        }
+
+        @media (max-width: 767px) {
+            .hero_content h1 {
+                font-size: 40px;
+            }
+            .hero_event_info_content p {
+                font-size: 18px;
+                line-height: 30px;
+            }
+            .hero_wrapper_area {
+                min-height: auto;
+                padding: 130px 10px 45px 10px;
+            }
+            .primary_btn_wrp {
+                text-align: left;
+            }
+          .hero_event_info_wrapper {
+            	margin-top: 35px;
+            }
+            .hero_event_info_item {
+                position: static;
+                right: 0;
+                width: auto;
+                height: auto;
+                left: 0;
+                margin: 0 auto;
+                padding: 15px 10px 15px 10px;
+                margin-bottom: 20px !important;
+            }
+            .hero_content p {
+                font-size: 16px;
+                line-height: 28px;
+                margin-bottom: 30px;
+            }
+            .primary_btn {
+                padding: 16px 25px;
+                font-size: 18px;
+            }
+            .hero_event_info_content p {
+                font-size: 16px;
+                line-height: 28px;
+            }
+            .hero_event_info_item:nth-child(1) {
+                bottom: 335px;
+            }
+            .hero_event_info_item:nth-child(2) {
+                bottom: 195px;
+            }
+            .hero_event_info_item:nth-child(3) {
+                bottom: 55px;
+            }
+
+        }
+        @media (max-width: 420px) {
+            .hero_content h1 {
+                font-size: 35px;
+            }
+        }
+{% endstyle %}
+
+
+<div class="hero_wrapper_area" style="background-image: url({{ section.settings.banner_image | image_url }});">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="hero_content">
+                            <h1>{{ section.settings.banner_title }}</h1> 
+                            <p>{{ section.settings.banner_descriptions }}</p>
+                        </div>
+                        <div class="primary_btn_wrp">
+                            <a class="primary_btn" href="{{ section.settings.banner_btn_url }}">{{ section.settings.banner_btn_text }} <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></a>
+                        </div>
+                    </div>
+                    <div class="hero_event_info_wrapper">
+                      {% for block in section.blocks %}
+                          {% if block.type == 'hero_event' %}
+                            <div class="hero_event_info_item d-flex">
+                              <div class="hero_event_info_icon">
+                                {% if block.settings.hero_event_icon %}
+                                  <img src="{{ block.settings.hero_event_icon | image_url: width: 1500 }}" alt="Event Icon" class="">
+                                {% endif %}
+                              </div>
+                              <div class="hero_event_info_content">
+                                {{ block.settings.hero_event_des }}
+                              </div>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+
+     
+          
+                    </div>
+                </div>
+            </div>
+       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Hero Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Hero Banner Title"
+    },
+    {
+      "type": "text",
+      "id": "banner_descriptions",
+      "label": "Hero Banner Descriptions"
+    },
+    {
+      "type": "text",
+      "id": "banner_btn_text",
+      "label": "Hero Banner Button"
+    },
+    {
+      "type": "url",
+      "id": "banner_btn_url",
+      "label": "Hero Banner URL"
+    }
+    
+  ],
+  "blocks": [
+    {
+      "type": "hero_event",
+      "name": "Hero Event",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "hero_event_icon",
+          "label": "Hero Event Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "hero_event_des",
+          "label": "Hero Event Descriptions"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+
+
+
+
+
+
